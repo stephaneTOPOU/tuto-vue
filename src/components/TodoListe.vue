@@ -1,5 +1,12 @@
 <template>
+  <Layout>
+    <template #header>En tête</template>
+    <template #aside>Barre latérale</template>
+    <template #main>Contenu principal</template>
+    <template #footer>Bas de page</template>
+  </Layout>
     <p v-if="remainingTodos > 0">Il vous reste {{ remainingTodos }} tâche{{ remainingTodos > 1 ? 's' : '' }} à faire</p>
+    <!-- <Button><strong>Demo</strong>de bouton</Button> -->
   <form action="" @submit.prevent="addTodo">
     <fieldset role="group">
       <input v-model="newTodo" type="text" placeholder="Tâche à effectuer" />
@@ -14,22 +21,29 @@
         :key="todo.date"
         :class="{ completed: todo.completed }"
       >
-        <label
+        <!-- <label
           ><input type="checkbox" v-model="todo.completed" />{{
             todo.title
           }}</label
-        >
+        > -->
+        <!-- <checbox :label="todo.title" @check="console.log('coché')" @uncheck="console.log('décoché')"/> -->
+         <checbox :label="todo.title"/>
       </li>
     </ul>
     <label>
       <input type="checkbox" v-model="hideCompleted" />
       Masquer les tâches complétées
     </label>
+    <checbox label="Bonjour" />
   </div>
 </template>
 
 <script setup>
+
 import { computed, ref } from "vue";
+import Checbox from "./Checbox.vue";
+import Button from "./Button.vue";
+import Layout from "./Layout.vue";
 
 const todos = ref([
   { title: "Exemple de tâche", completed: true, date: 1 },

@@ -13,6 +13,11 @@ import { createApp } from 'vue'
 // createApp(TodoListePlusApi).mount('#app')
 
 
-import Watcher from './components/Watcher.vue'
+// import Watcher from './components/Watcher.vue'
 
-createApp(Watcher).mount('#app')
+// createApp(Watcher).mount('#app')
+
+
+import TPQuiz from './components/TPQuiz.vue'
+
+createApp(TPQuiz).mount('#app')

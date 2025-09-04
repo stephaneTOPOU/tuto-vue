@@ -18,6 +18,10 @@ import { createApp } from 'vue'
 // createApp(Watcher).mount('#app')
 
 
-import TPQuiz from './components/TPQuiz.vue'
+// import TPQuiz from './components/TPQuiz.vue'
 
-createApp(TPQuiz).mount('#app')
+// createApp(TPQuiz).mount('#app')
+
+import Transition from './components/Transition.vue'
+
+createApp(Transition).mount('#app')

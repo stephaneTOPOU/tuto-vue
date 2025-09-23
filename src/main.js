@@ -22,6 +22,19 @@ import { createApp } from 'vue'
 
 // createApp(TPQuiz).mount('#app')
 
-import Transition from './components/Transition.vue'
+// import Transition from './components/Transition.vue'
 
-createApp(Transition).mount('#app')
+// createApp(Transition).mount('#app')
+
+import Transition from './rooter/App.vue'
+import { createRouter, createWebHistory } from 'vue-router';
+import { routes } from './rooter/routes.js';
+
+const router = createRouter({
+    history: createWebHistory(),
+    routes
+})
+
+const app = createApp(Transition)
+app.use(router)
+app.mount('#app')
